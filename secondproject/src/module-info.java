@@ -4,5 +4,5 @@
 /**
  * 
  */
-module secondproject {
+module DayOneAssignmentNew {
 }
