@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard</title>
+</head>
+
+<body>
+	<!--<div th:switch="${#authentication.getPrincipal().getAuthorities()}">-->
+		<p th:text="'Your Role: ' + ${role}"></p>
+	<div th:switch="${userRole}">
+		<!-- ADMIN Dashboard -->
+		<div th:case="'ADMIN'">
+			<h1>Welcome, Admin!</h1>
+            <!-- Admin-specific content here -->
+            <h2>Interviews</h2>
+            <ul>
+                <li th:each="interview : ${interviews}">
+                    <span th:text="${interview.candidateName}"></span>
+                    <!-- Display other interview details as needed -->
+                </li>
+            </ul>
+		</div>
+
+		<!-- EMPLOYER Dashboard -->
+		<div th:case="'EMPLOYER'">
+			<h1>Welcome, Employer!</h1>
+
+			<!-- Display the list of interviews -->
+			<ul th:if="${interviews}">
+				<li th:each="interview : ${interviews}">
+					<p th:text="${interview.candidateName}"></p>
+					<p th:text="${interview.areaOfSME}"></p>
+					<!-- Add more fields as needed -->
+				</li>
+			</ul>
+
+			<!-- Display a message if no interviews are available -->
+			<p th:unless="${interviews}">No interviews available.</p>
+
+			<!-- Your employer-specific content here -->
+		</div>
+
+		<!-- INTERVIEWER Dashboard -->
+		<div th:case="'INTERVIEWER'">
+			<h1>Welcome, Interviewer!</h1>
+			<!-- Your interviewer-specific content here -->
+		</div>
+
+		<!-- Default Dashboard for other roles -->
+		<div th:case="*">
+			<h1>Welcome!</h1>
+			<!-- Your default content here -->
+		</div>
+	</div>
+</body>
+
+</html>
+
+</html>

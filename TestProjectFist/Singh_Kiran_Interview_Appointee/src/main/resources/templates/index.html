@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Technical Assessment</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<LINK href="style.css" type="text/css" rel="stylesheet"></head>
+	<body>
+		<div id="container">
+			<div id="main">
+				<div id="header">
+					<p><font color="#000000">Technical Assessment</font></p>
+				</div>
+				
+				<IMG alt="" src="images/middleimg.jpg">
+				
+				<div id="mainCol">
+
+					<div styele="display: flex"> 
+					<div class="left"> 
+						<div><label>New User ?</label></div>
+						<div><button>Register</button></div>
+					</div>
+					<div class="right">
+						<form th:action="@{/loginUser}" method="post" th:object="${loginRequest}">
+							<div>
+							<label for="username">Username:</label>
+							
+							<input type="text" id="username" name="username" th:field="*{username}" required>
+							
+						</div>
+						<div>
+							
+							<label for="password">Password:</label>
+							
+							<input type="password" id="password" name="password" th:field="*{password}" required>
+							
+						</div>
+						<div>
+							
+							<button type="submit">Login</button>
+						</div>
+							
+							</form>
+					</div>
+				</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</body>
+</html>

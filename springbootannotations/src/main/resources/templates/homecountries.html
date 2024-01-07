@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv = "Content-Type" content = "text/html;charset= UFT-8"/>
+<title> DAEMO Applicationto demonstrae@ ModelAttribute annotation</title>
+</head>
+<body>
+	<h4> Country List </h4>
+	<tr th:each = "country: ${countries}">
+	<td th:text="${country}"></td>/>
+	<td><br/></td>
+	</tr>
+	<h4> States </h4>
+	<tr th:each = "state: ${states}">
+	<td th:text="${state}"></td>/>
+	<td><br/></td>
+	</tr>
+
+</body>
+</html>

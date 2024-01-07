@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action ="#" th:action = "@(/courseinfo)" th:object="$(courseAtt)" method ="get">
+		<p>Id:<input type="text" th:field="*{id}"/></p>
+		<p>Course:<input type="text" th:field="*{course}"/></p>
+		<p>Instructor:<input type="text" th:field="*{instructor}"/></p>
+		
+	</form>
+
+</body>
+</html>

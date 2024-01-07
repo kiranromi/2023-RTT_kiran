@@ -1,0 +1,262 @@
+body {
+	text-align: center;
+	margin: 0px;
+	background-color: aliceblue;
+}
+
+body img {
+display: block;
+float: left;
+}
+
+#container {
+	width: 750px;
+	margin: 0 auto;
+	/* background: url(images/background.jpg) repeat-y; */
+	display: table;
+	/* border: 1px solid; */
+}
+
+#main {
+	float: left;
+	width: 735;
+	/* padding: 0px 7px 15px 7px; */
+}
+
+/**Do not Modify**/
+
+#header {
+	width: 750px;
+	height: 119px;
+	background: url(images/header.jpg) no-repeat;
+	text-align: left;
+}
+
+#header p {
+	padding: 40px 0px 40px 20px;
+	margin: 0;
+	font-family: Arial, Tahoma;
+	font-size: 24pt;
+}
+
+/**Grey space left of Links**/
+#space {
+	float: left;
+	width: 160px;
+	height: 32px;
+	/* background: url(images/space.jpg); */
+}
+
+#linksrow {
+	width: 735px;
+	float: left;
+}
+
+#links {
+	float: right;
+	/* width: 530px; */
+	/* height: 32px; */
+	/* padding-left: 25px; */
+	/* padding-right: 20px; */
+	/* background: url(images/links.jpg) no-repeat; */
+	/* background-color: bro; */
+}
+
+#links ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#links ul li {
+	/* padding: 5px; */
+	/* margin-bottom: 5px; */
+	font-family: Arial, Tahoma, Verdana;
+	font-size: 14px;
+	color: rgb(4, 97, 190);
+	float: left;
+	/* background-color: gold; */
+}
+
+ a {
+	/* margin-left: 25px; */
+	/* color: rgb(4, 97, 190); */
+	text-decoration: none;
+}
+
+ a:hover {
+	color: white;
+}
+
+/* #links ul li a:visited {
+	color: #FFF;
+	text-decoration: none;
+} */
+
+#links ul li :hover {
+	font-weight: bold;
+	background-color: rgb(4, 97, 190);
+	color: white;
+}
+
+/**Title of Content**/
+#contentTitle {
+	position: relative;
+/**Move up Over Image**/
+	top: -30px;
+/*********************/
+	float: left;
+	width: 735px;
+	height: 30px;
+	background: url(images/contenttitle.gif) no-repeat;
+	margin: 0;
+	text-align: left;
+}
+
+#contentTitle p {
+	font-family: Lucida, Tahoma;
+	font-weight: bold;
+	font-size: 100%;
+	padding: 8px 0px 0px 12px;
+	margin: 0;
+}
+
+/**Left Col**/
+#leftCol {
+	position: relative;
+	top: -30px;
+	width: 210px;
+	float: left;
+}
+
+#leftCol p {
+	margin: 0;
+	text-align: left;
+	font-family: 'Lucida Grande', Verdana;
+	font-size: 8pt;
+}
+
+.leftcolHeading {
+	width: 210px;
+	float: left;
+	margin-top: 10px;
+	border: 1px solid;
+	color: #A6A6A6;
+}
+
+.leftcolHeading h3 {
+	color: #000;
+	margin: 0;
+	font-family: 'Times New Roman', Tahoma;
+}
+
+/**Main Content**/
+#mainCol {
+	/* position: relative; */
+	/* top: -30px; */
+	/* margin-left: 8px; */
+	width: 100%;
+	float: left;
+}
+
+#mainCol p {
+	margin: 0;
+	text-align: left;
+	font-family: 'Lucida Grande', Verdana;
+	font-size: 10pt;
+}
+
+.mainColHeading {
+	width: 510px;
+	float: left;
+	margin-top: 10px;
+	border: 1px solid;
+	color: #A6A6A6;
+	text-align: left;
+}
+
+.mainColHeading h3 {
+	margin: 0;
+	padding: 3px 0px 5px 15px;
+	font-family: Tahoma, Verdana;
+	color: #000;
+}
+
+#footer {
+	width: 735px;
+	background: url(images/topbot.jpg) repeat-y;
+	float: left;
+	font-family: Tahoma, Verdana;
+	font-size: 8pt;
+}
+
+/**Main Content Image**/
+.right {
+	margin: 20px;
+	float: right;
+	width: 40%;
+}
+
+.left {
+	margin: 20px;
+	float: left;
+	width: 40%;
+}
+.center{
+	margin: 20px;
+	width: 100%;
+}
+.registerInput{
+	margin: 5px;
+    border-radius: 5px;
+	border: 0.5px solid #8e8c8c;
+    width: 8rem;
+    height: 25px;
+}
+.requestInput{
+	margin: 5px;
+    border-radius: 5px;
+	border: 0.5px solid #8e8c8c;
+    width: 8rem;
+    height: 25px;
+	float: left;
+}
+textarea{
+	margin: 5px;
+    border-radius: 5px;
+	border: 0.5px solid #8e8c8c;
+    width: 10rem;
+	float: left;
+    /* height: 25px; */
+}
+button{
+	background-color: #1a85c3;
+    color: white;
+    height: 2rem;
+    width: 7rem;
+    border-radius: 7px;
+	cursor: pointer;
+    margin: 10px;
+}
+
+button:hover{
+	background-color: #0d537c;
+    color: white;
+	font-weight: bold;
+}
+.nav{
+	padding: 5px;
+	border-radius: 5px;
+	border: 1px solid lightgray;
+	margin: 2px 5px;
+}
+.current {
+	font-weight: bold;
+	background-color: rgb(4, 97, 190);
+	color: white;
+}
+.fileUpload{
+	float: left;
+    margin: 5px;
+	height: 25px;
+}

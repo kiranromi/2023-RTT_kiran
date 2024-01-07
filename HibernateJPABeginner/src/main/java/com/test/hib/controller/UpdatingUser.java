@@ -21,6 +21,7 @@ public class UpdatingUser {
 		session.merge(u);
 		session.getTransaction().commit();
 		session.close();
+		factory.close();
 		
 		
 		

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/emplyee-dashboard.css">
+
+    
+
+
+</head>
+	<div class="navbar">
+		<div class="logo">
+			<img src="/images/Ta.png">
+			<span class="logo-name nav-item">Techinical Assistant</span>
+		</div>
+		<div class="auth nav-item">
+			<div class="dropdown">
+				<p></p>
+				<button class="dropbtn login-button" th:text="${name}"> </button>
+			</div>
+		</div>
+		<form method="get" action="/logout">
+			<button type="submit">Logout</button>
+			<input type="hidden" name="authorization" th:value="${authorization}">
+		</form>
+	</div>
+
+    <!-- Page Content -->
+    <div class="content" style="width: 40%; margin: auto;">
+        <div style="margin-top: 20px">
+            <h3>Assign Interview:</h3>
+        </div>
+		
+		<form th:action="@{'/interviews/assignInterview/'}" method="post">
+			<div style="margin-top: 20px">
+	            <label for="technologyDropdown">Choose Technology:</label>
+	            <select id="technologyDropdown" name="techId">
+	            </select>
+	        </div>
+	        <div style="margin-top: 20px">
+	            <label for="interviewerDropdown">Interviewer:</label>
+	            <select id="interviewerDropdown" name="interviewerId">
+	                <option value="">Select a technology first</option>
+	            </select>
+	        </div>
+	        
+			<input type="hidden" name="authorization" th:value="${authorization}">
+			<input type="hidden" name="interviewId" th:value="${interviewId}">
+			<input type="hidden"  id="interviewerId" name="interviewerId" th:value="${interviewerId}">
+	        <div style="margin-top: 20px">
+	            <button id="submitBtnnn">Submit</button>
+	        </div>
+	    </form>
+        
+    </div>
+
+    <script src="/js/assign-int.js"></script>
+    <script>
+	  // Get the select element
+	  const selectElement = document.getElementById('interviewerDropdown');
+	  
+	  // Get the hidden input element
+	  const hiddenInputElement = document.getElementById('interviewerId');
+	  
+	  // Add event listener to the select element
+	  selectElement.addEventListener('change', function() {
+	    // Set the value of the hidden input field to the selected value of the select box
+	    hiddenInputElement.value = this.value;
+	    
+	    // For demonstration purposes, you can log the value to the console
+	    console.log("Hidden input value set to:", hiddenInputElement.value);
+	  });
+	</script>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2023 Technical Assistant. All rights reserved.</p>
+    </footer>
+</body>

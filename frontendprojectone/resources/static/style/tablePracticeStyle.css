@@ -1,0 +1,17 @@
+@charset "ISO-8859-1";
+table {
+   width: 200px;
+   height: 300px;
+   text-align: center;
+   border: 5px solid green;
+}
+
+th, td {
+   border: 1px solid red;
+}
+
+td:hover {
+   background-color: lightcoral;
+   color: white;
+}
+

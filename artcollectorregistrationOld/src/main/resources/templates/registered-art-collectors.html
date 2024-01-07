@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Registered Art Collectors</title>
+</head>
+<body>
+    <h1>Registered Art Collectors</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="collector : ${registeredCollectors}">
+                <td th:text="${collector.username}"></td>
+                <td th:text="${collector.country}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

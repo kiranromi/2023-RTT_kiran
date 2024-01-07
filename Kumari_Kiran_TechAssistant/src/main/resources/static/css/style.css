@@ -1,0 +1,393 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+}
+
+.logo-name {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+a.home-btn {
+	text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Align items vertically in the center */
+    background-color: #367588; /* Dark green color */
+    color: white;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center; /* Align logo and text vertically in the center */
+}
+
+.navbar .logo img {
+    height: 50px;
+    margin-right: 10px; /* Adds some space between the logo and the name */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ddd;
+}
+
+.auth a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.auth a:hover {
+    color: #ddd;
+}
+
+.login-button {
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    width: 120px;
+    border: 2px solid white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.login-button:hover {
+    background-color: #367588; /* Darker shade for hover effect */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    padding-top: 25px;
+    display: none;
+    position: absolute;
+    background-color: #367588;
+    min-width: 200px;
+    min-height: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #022616;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.hero {
+    background-color: #f4f4f4;
+    padding: 50px;
+    text-align: center;
+    min-height: 300px;
+}
+
+.hero h1 {
+    margin: 0;
+    color: #367588;
+}
+
+.hero p {
+    color: #666;
+}
+
+.content {
+    padding: 20px;
+    text-align: left;
+    min-height: 500px;
+}
+
+footer {
+    background-color: #367588;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* intrview reg form */
+.form-title {
+    margin: 25px;
+    text-align: center;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #367588; /* Dark green color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    min-width: 130px;
+    height: 45px;
+}
+
+button:hover {
+    background-color: #003614;
+}
+
+/* login page */
+
+.login-container {
+    background-color: #f6f1f1;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: black;
+    width: 30%;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+}
+
+.login-container input[type="email"], .login-container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    margin: auto;
+    height: 25px;
+}
+
+.login-container button {
+    background-color: #006837; /* Slightly darker green */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 95%;
+}
+
+.login-container button:hover {
+    background-color: #00562b;
+}
+
+/* about us */
+.about-us-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+}
+
+.about-us-container h1, .about-us-container h2 {
+    color: #367588; /* Dark green color */
+}
+
+.about-us-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-us-container li {
+    margin-bottom: 10px;
+}
+
+#emplyeeDashbpoard {
+    /* height: 700px; */
+}
+
+.table-container {
+    max-width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+.table-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-buttons {
+	display: flex;
+}
+
+.table-buttons button {
+    margin-left: 10px; /* Spacing between buttons */
+}
+
+/* Add other styles here as previously mentioned */
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f9fbfc; /* Dark green color */
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
+/* home page */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: 25px;
+}
+.left-section {
+    width: 70%;
+}
+
+.right-section {
+	width: 350px;
+}
+
+.left-section, .right-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin: 20px;
+
+}
+
+.hero-section {
+    background-color: #f5eded;
+    color: #022616;
+    /* padding: 20px; */
+    display: flex;
+    align-items: center;
+}
+
+.hero-image {
+    width: 60%;
+    height: auto;
+}
+
+.hero-text {
+    padding-left: 20px;
+}
+
+.login {
+    width: 80%;
+    text-align: center;
+    padding-top: 20px;
+    margin: auto;
+}
+
+.login input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button.home-btn,
+a.home-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #367588;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2a5b6a;
+}
+
+/* home page end */
+
+
+
+
+
+
+
+

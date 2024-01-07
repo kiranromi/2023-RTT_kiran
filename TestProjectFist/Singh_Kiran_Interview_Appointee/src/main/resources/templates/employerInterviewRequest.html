@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Technical Assessment</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<LINK href="style.css" type="text/css" rel="stylesheet"></head>
+	<body>
+		<div id="container">
+			<div id="main">
+				<div id="header">
+					<p><font color="#000000">Technical Assessment</font></p>
+				</div>
+				
+				<IMG alt="" src="images/middleimg.jpg">
+                    <div id="linksrow">
+                        <!-- <div id="space"></div> -->
+                        <div id="links">
+                            <ul>
+                                <li id="LI1">
+                                    <div class="nav current">
+                                        <a href="#" class="current"> Request </a></div>
+                                    
+                                </li>
+                                <li>
+                                    <div class="nav">
+                                    <a href="#"> Results </a>
+                                </div>
+                                </li>
+                                <li id="LI1">
+                                    <div class="nav">
+                                        <a href="#"> Invoice </a></div>
+                                    
+                                </li>
+                                <li>
+                                    <div class="nav">
+                                    <a href="#"> Report </a>
+                                </div>
+                                </li>
+                                <li>
+                                    <div class="nav">
+                                    <a href="#"> Sign Out </a>
+                                </div>
+                                </li>
+                                
+                                
+                            </ul>
+                        </div>
+                    </div>
+				
+				<div id="mainCol">
+                    <div class="center">
+                        <h2 class="card-title text-left mb-4">Interview Request</h2>
+                    <form th:action="@{/register}" th:object="${registerRequestDTO}" method="post">
+                        <table style="width: 100%;">
+                            <tr>
+                                <th>
+                                    <label for="name">Candidate Name:</label>
+                                </th>
+                                <th>
+                                    <input class="requestInput" type="text" id="name" name="name" class="form-control"th:field="*{name}" oninput="validateForm()" required>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="phone">Candidate Phone:</label>
+                                </th>
+                                <th>
+                                    <input class="requestInput" type="text" id="phone" name="phone" class="form-control"th:field="*{phone}" oninput="validateForm()" required>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="skill">Skill:</label>
+                                </th>
+                                <th>
+                                    <select class="requestInput" id="skill" name="skill" class="form-control" th:field="*{skill}" oninput="validateForm()" required>
+
+                                                    <option value="1">JAVA</option>
+                                                    <option value="2">Database</option>
+                                                    <option value="3">FrontEnd</option>
+                                                    <option value="3">DevOps</option>
+                                                    <option value="3">DotNet</option>
+
+                                                    </select>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="notes">Notes:</label>
+                                </th>
+                                <th>
+                                    <textarea  id="notes" name="notes" class="form-control"th:field="*{notes}" oninput="validateForm()" required></textarea>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    <label for="resume">Upload CV:</label>
+                                </th>
+                                <th>
+                                    <input class="fileUpload" type="file" id="resume" name="resume" class="form-control"th:field="*{resume}" oninput="validateForm()" required>
+                                </th>
+                            </tr>
+                        </table>
+                        <button type="submit" id="submitButton" class="btn btn-primary" disabled>Submit</button>
+                    </form>
+                    </div>
+
+				</div>
+				
+				
+			</div>
+		</div>
+	</body>
+</html>

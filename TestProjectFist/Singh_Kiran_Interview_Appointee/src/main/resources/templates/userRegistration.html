@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<title>Technical Assessment</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<LINK href="style.css" type="text/css" rel="stylesheet"></head>
+	<body>
+		<div id="container">
+			<div id="main">
+				<div id="header">
+					<p><font color="#000000">Technical Assessment</font></p>
+				</div>
+				
+				<IMG alt="" src="images/middleimg.jpg">
+				
+				<div id="mainCol">
+
+					<div styele="display: flex"> 
+					<div class="center">
+                        <h2 class="card-title text-center mb-4">User Registration</h2>
+
+<form th:action="@{/register}" th:object="${registerRequestDTO}" method="post">
+
+<div class="form-group">
+
+<label for="firstName">First Name:</label>
+
+<input class="registerInput" type="text" id="firstName" name="firstName" class="form-control"
+
+th:field="*{firstName}" oninput="validateForm()" required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="lastName">Last Name:</label>
+
+<input class="registerInput" type="text" id="lastName" name="lastName" class="form-control"
+
+th:field="*{lastName}" required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="userName">Username:</label>
+
+<input class="registerInput" type="text" id="userName" name="userName" class="form-control"
+
+th:field="*{userName}" oninput="validateForm()" required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="password">Password:</label>
+
+<input class="registerInput" type="password" id="password" name="password" class="form-control"
+
+th:field="*{password}" oninput="validateForm()" required>
+
+</div>
+
+<div class="form-group">
+
+<label for="confirmPassword">Confirm Password:</label>
+
+<input class="registerInput" type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+
+th:field="*{confirmPassword}" oninput="checkPasswordMatch()" required>
+
+<div id="passwordError" style="color: red;">[[${passwordError}]]</div>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="email">Email:</label>
+
+<input class="registerInput" type="email" id="email" name="email" class="form-control" th:field="*{email}"
+
+required>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="userType">User Type:</label>
+
+<select  class="registerInput" id="userType" name="userType" class="form-control" th:field="*{userType}"
+
+oninput="validateForm()" required>
+
+<option value="1">ADMIN</option>
+
+<option value="2">EMPLOYER</option>
+
+<option value="3">INTERVIEWER</option>
+
+</select>
+
+</div>
+
+
+
+<div class="form-group">
+
+<label for="address">Address:</label>
+
+<input class="registerInput" type="text" id="address" name="address" class="form-control"
+
+th:field="*{address}" required>
+
+</div>
+
+<button type="submit" id="submitButton" class="btn btn-primary" disabled>Register</button>
+
+
+
+</form>
+					</div>
+				</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</body>
+</html>

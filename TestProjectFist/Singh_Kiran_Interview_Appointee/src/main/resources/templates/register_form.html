@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>User Registration</title>
+	<!-- Bootstrap CSS link -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+
+<body class="bg-light">
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-body">
+						<div id="formError" style="color: red;"></div>
+						<h2 class="card-title text-center mb-4">User Registration</h2>
+						<form th:action="@{/processRegistration}" th:object="${registerRequestDTO}" method="post">
+							<div class="form-group">
+								<label for="firstName">First Name:</label>
+								<input type="text" id="firstName" name="firstName" class="form-control"
+									th:field="*{firstName}" oninput="validateForm()" required>
+							</div>
+
+							<div class="form-group">
+								<label for="lastName">Last Name:</label>
+								<input type="text" id="lastName" name="lastName" class="form-control"
+									th:field="*{lastName}" required>
+							</div>
+
+							<div class="form-group">
+								<label for="userName">Username:</label>
+								<input type="text" id="userName" name="userName" class="form-control"
+									th:field="*{userName}" oninput="validateForm()" required>
+							</div>
+
+							<div class="form-group">
+								<label for="password">Password:</label>
+								<input type="password" id="password" name="password" class="form-control"
+									th:field="*{password}" oninput="validateForm()" required>
+							</div>
+							<div class="form-group">
+								<label for="confirmPassword">Confirm Password:</label>
+								<input type="password" id="confirmPassword" name="confirmPassword" class="form-control"
+									th:field="*{confirmPassword}" oninput="checkPasswordMatch()" required>
+								<div id="passwordError" style="color: red;">[[${passwordError}]]</div>
+							</div>
+
+							<div class="form-group">
+								<label for="email">Email:</label>
+								<input type="email" id="email" name="email" class="form-control" th:field="*{email}"
+									required>
+							</div>
+
+							<div class="form-group">
+								<label for="userType">User Type:</label>
+								<select id="userType" name="userType" class="form-control" th:field="*{userType}"
+									oninput="validateForm()" required>
+									<option value="1">ADMIN</option>
+									<option value="2">EMPLOYER</option>
+									<option value="3">INTERVIEWER</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label for="address">Address:</label>
+								<input type="text" id="address" name="address" class="form-control"
+									th:field="*{address}" required>
+							</div>
+							<button type="submit" id="submitButton" class="btn btn-primary" disabled>Register</button>
+
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap JS and Popper.js scripts (required for Bootstrap) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+		integrity="sha384-LV+HA8J+izPdZ+70icAaVjxh7GOJd5JFOIIJlcZlo8qq8l3YmEXETPxjME4G+i4w"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyDf5TR5i6HgRMEWe3L2u5DI7qD2EdaCIl"
+		crossorigin="anonymous"></script>
+	<script>
+    function validateForm() {
+        var firstName = document.getElementById("firstName").value;
+        var userName = document.getElementById("userName").value;
+        var password = document.getElementById("password").value;
+        var userType = document.getElementById("userType").value;
+        var submitButton = document.getElementById("submitButton");
+        var errorDiv = document.getElementById("formError");
+
+        var errors = [];
+
+        if (firstName.trim() === '') {
+            errors.push("First Name is required.");
+        }
+
+        if (userName.trim() === '') {
+            errors.push("Username is required.");
+        }
+
+        if (password.trim() === '') {
+            errors.push("Password is required.");
+        }
+
+        if (userType === '') {
+            errors.push("User Type is required.");
+        }
+
+        if (errors.length > 0) {
+            submitButton.disabled = true;
+            errorDiv.innerHTML = errors.join("<br>");
+        } else {
+            submitButton.disabled = false;
+            errorDiv.innerHTML = "";
+        }
+    }
+
+    function checkPasswordMatch() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var errorDiv = document.getElementById("passwordError");
+        var submitButton = document.getElementById("submitButton");
+
+        if (password !== confirmPassword) {
+            errorDiv.innerHTML = "Passwords do not match!";
+            submitButton.disabled = true;
+        } else {
+            errorDiv.innerHTML = "";
+            var errors = document.getElementById("formError").innerHTML;
+            if (!errors || errors.trim() === "") {
+                submitButton.disabled = false;
+            }
+        }
+    }
+</script>
+
+</body>
+
+</html>

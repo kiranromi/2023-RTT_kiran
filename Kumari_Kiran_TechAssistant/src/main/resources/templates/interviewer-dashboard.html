@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/emplyee-dashboard.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="logo">
+			<img src="/images/Ta.png">
+			<span class="logo-name nav-item">Techinical Assistant</span>
+		</div>
+		<div class="auth nav-item">
+			<div class="dropdown">
+				<p></p>
+				<button class="dropbtn login-button" th:text="${name}"> </button>
+			</div>
+		</div>
+		<form method="get" action="/logout">
+			<button type="submit">Logout</button>
+			<input type="hidden" name="authorization" th:value="${authorization}">
+		</form>
+	</div>
+
+	<!-- Page Content -->
+	<div class="content" id="emplyeeDashboard">
+		<div class="table-container">
+			<div class="table-top">
+				<div class="table-buttons">
+					<form method="get" action="/invoice/">
+						<input type="hidden" name="authorization" th:value="${authorization}">
+					</form>
+
+					<form method="get" action="/invoice/rates">
+						<input type="hidden" name="authorization" th:value="${authorization}">
+					</form>
+				</div>
+			</div>
+
+			<table>
+				<thead>
+					<tr>
+						<th>Candidate Name</th>
+						<th>Phone</th>
+						<th>Email</th>
+						<th>Technology</th>
+						<th>Interview Mode</th>
+						<th>Resume</th>
+						<th>Status</th>
+						<th>Comment</th>
+						<th>Result</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="interview : ${interviewList}">
+						<td th:text="${interview.candidateName}"></td>
+						<td th:text="${interview.candidateContact}"></td>
+						<td th:text="${interview.email}"></td>
+						<td th:text="${interview.technology}"></td>
+						<td th:text="${interview.modeOfInterview}"></td>
+						<td>
+							<a th:href="@{'/interviews/' + ${interview.id} + '/downloadResume/'}">Download Resume</a>
+						</td>
+						<td th:text="${interview.status}"></td>
+						<td th:text="${interview.feedback}"></td>
+						<td th:text="${interview.isSelected}"></td>		
+						 <td>
+							<form th:action="@{/interviews/feedback/}" method="get">
+								<input type="hidden" name="authorization" th:value="${authorization}">
+								<input type="hidden" name="interviewId" th:value="${interview.id}">
+								<button class="home-btn">Feedback</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<p>© 2023 Technical Assistant. All rights reserved.</p>
+	</footer>
+</body>

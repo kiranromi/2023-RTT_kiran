@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/css/style.css">
+	<script>
+		document.getElementById('home-button').addEventListener('click', function () {
+			alert('Button was clicked!');
+			
+		});
+	</script>
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="logo">
+			<img src="/images/Ta.png">
+			<span class="logo-name nav-item">Techinical Assistant</span>
+		</div>
+		<nav>
+			<ul>
+				<li><a href="/" class="nav-item">Home</a></li>
+				<li><a href="/about" class="nav-item">About Us</a></li>
+				<li><a href="/contact" class="nav-item">Contact us</a></li>
+			</ul>
+		</nav>
+	</div>
+
+	<div class="container" style="min-height: 500px;">
+		<div class="left-section">
+			<div class="hero-section">
+				<img src="./images/skyscrappers.jpg" height="500" width="700" alt="Hero Image" class="hero-image">
+				<div class="hero-text">
+					<h1>Welcome to Tech Assistant </h1>
+					<p>This is a sample hero section text.</p>
+				</div>
+			</div>
+		</div>
+		<div class="right-section">
+			<div style="text-align: center; margin: auto">
+				<h3>New User?</h3>
+			</div>
+			<div style=" margin: auto; width: 60%;">
+				<!-- <button id = "home-button" class="home-btn">Register as Employeer</button> -->
+				<p><a class="home-btn" href="/registerEmployer">Register as Employeer</a></p>
+			</div>
+
+			<div>
+				<h4 style="text-align: center; margin: 10px">Or</h4>
+			</div>
+
+			<div style=" margin: auto; width: 60%;">
+					<p><a class="home-btn" href="/registerInterviewer">Register as Interviewer</a></p>
+			</div>
+
+			<form th:action="@{/loginUser}" method="post">
+					<div class="login">
+						<h2>Login</h2>
+							<div class="form-group">
+								<label for="username">User Name:</label>
+								<input class="home-from" type="text" id="username" name="username" required>
+							</div>
+							<div class="form-group">
+								<label for="password">Password:</label>
+								<input class="home-from" type="password" id="password" name="password" required>
+							</div>
+                
+						<button  type="submit">Login</button>
+					</div>
+			
+			</form>
+			
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<p>© 2023 Technical Assistant. All rights reserved.</p>
+	</footer>
+
+</body>

@@ -1,0 +1,18 @@
+Good Morning
+Thank you for providing me this oppurtunity to introduce me and my qualification.
+My Name is Kiran Kumari. I am from Charlotte, Nc
+I have total 5 yrs of experience in Software testing field and did Blackbox functional testing,API Testing and Automation testing.
+I worked on Insurence and banking domin
+I Documented and Design test cases for Manual testing and test-Sripts to automate regression suites by using Java Selenium.
+I got chance to work both type of WEBSERVICES functional testing.
+SOAP Based service- by using SOAP UI TOOL and 
+RESTFUL Service - Using POSTMAN Tool
+I hava a good knowlege of SQL Queries. I used it to verifying the database.
+I used JIRA AND ALM for Test Management  and Bug Logging.
+I Worked in Agile methodology and participetated in daily standup call, Sprint Planning , Sprint review, and Retrospective meeting.
+I am a  Certified Salesforce Administaror,
+And I am also Certified ISTQB (FOUNDATIONAL Lable){International Software Testing Qualification Board)
+Currently I am persuening Full stack Java Developement Bootcamp with PerSchcolas, to enhance my skills and I can use in my project if needed.
+Apart from that I  am a Team Player, Multitask organizer and Quick Learner.
+Thanks again.
+ 
