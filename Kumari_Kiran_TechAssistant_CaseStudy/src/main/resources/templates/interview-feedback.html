@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title></title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+	<div class="navbar">
+		<div class="logo">
+			<img src="/images/Ta.png">
+			<span class="logo-name nav-item">Techinical Assistant</span>
+		</div>
+	</div>
+
+	<!-- Page Content -->
+	<div class="content">
+		<h3 class="form-title">Feedback Submission</h3>
+		<div class="form-container">
+			<form th:action="@{/interviews/feedback}" method="post">
+				<input type="hidden" name="authorization" th:value="${authorization}">
+				<input type="hidden" name="interviewId" th:value="${interviewId}">
+			
+				<div class="form-group">
+					<label for="email">Feedback:</label>
+					<textarea type="feedback" id="feedback" name="feedback" required></textarea>
+				</div>
+
+				<div class="form-group">
+					<label for="skills">Is Selected:</label>
+					<div class="" id="isSelected" style="width: 100px;">
+						<select id="selectedDropdown" name="isSelected" class="custom-select">
+							<option value="0">NO</option>
+							<option value="1">YES</option>
+						</select>
+					</div>
+				</div>
+	
+				<button type="submit">Submit Feedback</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer>
+		<p>© 2023 Technical Assistant. All rights reserved.</p>
+	</footer>
+</body>

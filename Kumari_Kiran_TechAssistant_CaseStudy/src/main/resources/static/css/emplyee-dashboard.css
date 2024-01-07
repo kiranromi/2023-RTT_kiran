@@ -1,0 +1,47 @@
+#emplyeeDashbpoard {
+    /* height: 700px; */
+}
+
+.table-container {
+    max-width: 90%;
+    margin: 20px auto;
+    overflow-x: auto;
+}
+
+.table-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-buttons button {
+    margin-left: 10px; /* Spacing between buttons */
+}
+
+/* Add other styles here as previously mentioned */
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: #f9fbfc; /* Dark green color */
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+

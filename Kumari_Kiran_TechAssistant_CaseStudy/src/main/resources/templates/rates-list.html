@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>RateList</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/emplyee-dashboard.css">
+
+</head>
+<body>
+	<div class="navbar">
+		<div class="logo">
+			<img src="/images/Ta.png">
+			<span class="logo-name nav-item">Techinical Assistant</span>
+		</div>
+		<div class="auth nav-item">
+			<div class="dropdown">
+				<p></p>
+				<button class="dropbtn login-button" th:text="${userName}"> </button>
+			</div>
+		</div>
+		<form method="get" action="/logout">
+			<button type="submit">Logout</button>
+			<input type="hidden" name="authorization" th:value="${authorization}">
+		</form>
+	</div>
+	
+    <!-- Page Content -->
+    <div class="content" id="emplyeeDashbpoard">
+        <h2 style="margin-left: 5%;">Rate List</h2>
+        <div class="table-container">
+            <table>
+                <tbody><tr><th>Technology</th>
+                <th>Phone/Video</th>
+                <th>In-Person</th>
+
+                </tr><tr>
+                    <td>Java/J2EE</td>
+                    <td>$50</td>
+                    <td>$70</td>
+                </tr>
+                <tr>
+                    <td>Microsoft Services</td>
+                    <td>$60</td>
+                    <td>$90</td>
+                </tr>
+                <tr>
+                    <td>Front End</td>
+                    <td>$70</td>
+                    <td>$80</td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <!-- <footer>
+        <p>© 2023 Technical Assistant. All rights reserved.</p>
+    </footer> -->
+</body>
